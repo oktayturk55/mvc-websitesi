@@ -1,0 +1,50 @@
+﻿@using vs1.Models.Siniflar
+@model List<driverstanding>
+
+@{
+    ViewBag.Title = "DriverStanding";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<section class="results-w3ls">
+    <div class="container">
+
+        <div>
+
+            <br /><br />
+            <div>
+                <div>
+                    <div class="table-responsive">
+                        <h3>Driver Standing</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th><h4>Position</h4></th>
+                                    <th><h4>Driver</h4></th>
+                                    <th></th>
+                                    <th><h4>Team</h4></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th><h4>Points</h4></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var x in Model) {
+                                <tr>
+                                    <td>@x.position</td>
+                                    <td>@x.drivername</td>
+                                    <td></td>
+                                    <td>@x.carname</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>@x.points</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

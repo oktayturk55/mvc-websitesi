@@ -1,0 +1,63 @@
+﻿@model vs1.Models.Siniflar.blogyorum
+@{
+    ViewBag.Title = "Blogdetail";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="blog">
+        <div class="container">
+            <div class="col-md-8 blog-top-left-grid">
+                <div class="left-blog left-single">
+                    <div class="blog-left">
+                        @foreach (var x in Model.deger1)
+                        {
+                            <div class="single-left-left">
+                                <p>Posted By <a href="#">Admin</a> &nbsp;&nbsp; on @x.tarih.ToString("dd.MM.yyyy")  &nbsp;&nbsp; </p>
+                                <img src="@x.blogimage" alt="" />
+                            </div>
+                            <div class="blog-left-bottom">
+                                <P> @x.aciklama </P>
+                            </div>
+                        }
+                    </div>
+                    <div class="response">
+                        <h3>Responses</h3>
+                        <div class="media response-info">
+                            @foreach (var x in Model.deger2)
+                            {
+                                <div class="media-left response-text-left">
+                                    
+                                    <h5><a href="#">@x.kullaniciadi</a></h5>
+                                </div>
+                                <div class="media-body response-text-right">
+                                    <p>@x.yorum</p>
+                                    
+                                </div>
+                                <div class="clearfix"> </div>
+                            }
+                        </div>
+                    </div>
+                    @Html.Action("yorumyap", "default")
+
+                </div>
+            </div>
+            <div class="col-md-4 blog-top-right-grid">
+                <div class="Categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">haber1</a></li>
+                        <li><a href="#">haber2</a></li>
+                        <li><a href="#">haber3</a></li>
+                        <li><a href="#">haber4</a></li>
+                        <li><a href="#">haber5</a></li>
+                        <li><a href="#">haber6</a></li>
+                    </ul>
+                </div>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

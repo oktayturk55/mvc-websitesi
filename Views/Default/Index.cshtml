@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <div class="banner">
+        <div class="container">
+            <div class="banner-top-grid">
+                <script src="~/web/js/responsiveslides.min.js"></script>
+                <script>
+                    $(function () {
+                        $("#slider3").responsiveSlides({
+                            auto: true,
+                            pager: true,
+                            nav: false,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+                    });
+                </script>
+                <div id="top" class="callbacks_container-wrap">
+                    <ul class="rslides" id="slider3">
+                        <li>
+                            <div class="banner-info">
+                                <h1 style="color:#ffffff">Results</h1>
+
+                                <p>2022 RACE RESULTS</p>
+                                <div class="banner-buttons">
+
+                                    <div class="banner-button">
+                                        <a href="/Default/Test">More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-info">
+                                <h1 style="color:#ffffff">Driver Standing</h1>
+                                <p>2022 Driver Standings</p>
+                                <div class="banner-buttons">
+
+                                    <div class="banner-button">
+                                        <a href="/Default/DriverStanding">More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-info">
+                                <h1 style="color:#ffffff">Constructor Standing</h1>
+                                <p>2022 Constructor Standings</p>
+                                <div class="banner-buttons">
+
+                                    <div class="banner-button">
+                                        <a href="/Default/ConstructorStanding">More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome">
+        <div class="container">
+            <div class="welcome-info">
+                <h2>Welcome</h2>
+                <h5>Welcome to my website</h5>
+                <p>I'm just trying something. </p>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="arrival-grids">
+            <ul id="flexiselDemo1">
+                <li>
+                    <a href="single">
+                        <img src="~/web/images/rbr1.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="single">
+                        <img src="~/web/images/Formula 1 Wallpaper Ferrari 2015 1.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="single">
+                        <img src="~/web/images/merc1.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="single">
+                        <img src="~/web/images/alphatauri1.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="single">
+                        <img src="~/web/images/alpine1.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="single">
+                        <img src="~/web/images/mcl3.jpg" alt="" />
+                    </a>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 1000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+                });
+            </script>
+            <script type="text/javascript" src="~/web/js/jquery.flexisel.js"></script>
+        </div>
+    </div>
+    @*<div class="news" id="news">
+            <div class="container">
+                <div class="news-info">
+                    <h3>News</h3>
+                </div>
+                <div class="news-grids">
+                    <div class="col-md-6 news-grid">
+                        <div class="news-grid-left">
+                            <div class="col-md-3 date">
+                                <p>23</p>
+                                <span>June</span>
+                            </div>
+                            <div class="col-md-9 date-info">
+                                <a href="single">‘We achieved most of the targets’</a>
+                                <p>Pirelli’s Motorsport Director Mario Isola says there is a positive consensus from drivers and teams when it comes to the new-for-2022 tyres, and only minor changes need to be made to the compounds for 2023.</p>
+                                <div class="news-button">
+                                    <a href="single">More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-grid-left">
+                            <div class="col-md-3 date">
+                                <p>09</p>
+                                <span>May</span>
+                            </div>
+                            <div class="col-md-9 date-info">
+                                <a href="single">Mekies says mood in Ferrari camp</a>
+                                <p>Ferrari started the season well, winning two of the opening three races. But due to a mix of reliability issues, controversial strategy calls and driver errors, they have won just two of the last 10 races.</p>
+                                <div class="news-button">
+                                    <a href="single">More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 news-grid">
+                        <div class="news-grid-img">
+                            <img src="~/web/images/news1.jpg" alt="" />
+                        </div>
+                        <br /><br /><br /><br />
+                        <div class="news-grid-img">
+                            <img src="~/web/images/news2.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    <div class="welcome">
+        <div class="container">
+            <div class="welcome-info">
+                <br /><br />
+            </div>
+        </div>
+    </div>
+    <div class="news-bottom">
+        <div class="container">
+            <div class="news-bottom-info">
+                <h3>Join the Belgian Grand Prix 2022</h3>
+                <p>
+                    August might have been the time for the teams to take a mandatory factory shutdown, but that doesn't apply to the driver market, and the silly season duly stepped up to the plate to get people talking.
+
+                    No sooner had everyone woken up on the morning after the Hungarian Grand Prix than Fernando Alonso was announced as an Aston Martin driver from 2023 onwards, signing a multi-year contract to replace the retiring Sebastian Vettel. That news came just as there had been rumours that Oscar Piastri had been in talks with McLaren, and the fallout from Alonso’s move duly exposed that position.
+                </p>
+                <p>
+                    Alpine announced Piastri as Alonso’s replacement for next year, but with no input from the young Australian, who then refuted the claim and said he would not be racing for Alpine next year. Where he will be racing is still to be announced, with Daniel Ricciardo’s future at McLaren looking increasingly uncertain – but there’s no resolution confirmed so far.
+
+                    Belgium is the first time the paddock will have reconvened since the driver market went into overdrive, and we’ll finally hear from all of the main protagonists.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

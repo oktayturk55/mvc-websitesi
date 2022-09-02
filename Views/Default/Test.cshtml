@@ -1,0 +1,53 @@
+﻿@using vs1.Models.Siniflar
+@model List<test>
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+<section class="results-w3ls">
+    <div class="container">
+
+        <div>
+
+            <br /><br />
+            <div>
+                <div>
+                    <div class="table-responsive">
+                        <h3>Result</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th><h4>Grand Prix</h4></th>
+                                    <th><h4>Date</h4></th>
+                                    <th><h4>Winner</h4></th>
+                                    <th></th>
+                                    <th><h4>Car</h4></th>
+                                    <th></th>
+                                    <th><h4>Laps</h4></th>
+                                </tr>   
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <td>@x.grandprix</td>
+                                        <td>@x.date</td>
+                                        <td>@x.winner</td>
+                                        <td>@x.winnercar</td>
+                                        <td></td>
+                                        <td>@x.laps</td>
+                                        <td></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
